@@ -1,0 +1,28 @@
+"""
+Good Email Header (Legitimate Email)
+This header belongs to a properly configured email from a trusted source like Gmail
+"""
+
+Received: by 2002:a05:620a:110b:b0:47a:526e:391b with SMTP id o11csp471234qtv;
+        Tue, 19 Dec 2024 10:45:23 -0800 (PST)
+Received: from mail-lf1-f47.google.com (mail-lf1-f47.google.com. [209.85.167.47])
+        by mx.google.com with ESMTPS id c11si7312714qkq.258.2024.12.19.10.45.22
+        for <recipient@example.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 19 Dec 2024 10:45:23 -0800 (PST)
+Received-SPF: pass (google.com: domain of sender@gmail.com designates 209.85.167.47 as permitted sender)
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b="abcDEFghi";
+       spf=pass (google.com: domain of sender@gmail.com designates 209.85.167.47 as permitted sender) smtp.mailfrom=sender@gmail.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gmail.com
+From: Sender Name <sender@gmail.com>
+To: Recipient Name <recipient@example.com>
+Subject: Legitimate Email
+
+"""
+Key Features:
+
+Valid Received Headers: IP addresses and domains match a trusted mail server (google.com and 209.85.167.47).
+SPF, DKIM, and DMARC Pass: Authentication mechanisms confirm legitimacy.
+No Blacklisted IPs: The sender's IP isn't on a known blacklist.
+"""

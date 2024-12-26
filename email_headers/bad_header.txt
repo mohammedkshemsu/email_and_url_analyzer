@@ -1,0 +1,33 @@
+"""
+Bad Email Header (Suspicious Email)
+This header belongs to a spoofed email, possibly from a phishing attacker
+"""
+
+Received: by 10.25.203.45 with SMTP id b45csp438921edr;
+        Tue, 19 Dec 2024 10:45:23 -0800 (PST)
+Received: from unknownserver.com (unknownserver.com. [123.456.789.000])
+        by mail.recipientdomain.com with SMTP id s11sm3492834qml.91.2024.12.19.10.45.23
+        for <victim@example.com>;
+        Tue, 19 Dec 2024 10:45:23 -0800 (PST)
+Received-SPF: fail (recipientdomain.com: domain of attacker@spoofed.com does not designate 123.456.789.000 as a permitted sender)
+Authentication-Results: mail.recipientdomain.com;
+       spf=fail (recipientdomain.com: domain of attacker@spoofed.com does not designate 123.456.789.000 as a permitted sender) smtp.mailfrom=attacker@spoofed.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=spoofed.com
+From: Fake Bank <attacker@spoofed.com>
+To: Victim Name <victim@example.com>
+Subject: Urgent! Verify Your Account
+
+
+"""
+Key Issues:
+
+Suspicious Received Header:
+The sender IP (123.456.789.000) is abnormal and not from a trusted server.
+Domain unknownserver.com is generic and suspicious.
+SPF and DMARC Failures:
+Indicates the domain (spoofed.com) is likely spoofed.
+Blacklisted IP:
+The IP address (123.456.789.000) could match a known blacklist.
+Urgent/Phishy Subject:
+Social engineering tactic often used in phishing emails.
+"""

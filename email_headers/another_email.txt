@@ -1,0 +1,18 @@
+"""
+Example: Edge Case Header
+This header has missing or malformed fields, which could also be suspicious:
+"""
+Received: from suspiciousmail.com (suspiciousmail.com. [203.0.113.45])
+        by recipientdomain.com with SMTP id d11si3492835qml.12.2024.12.19.11.00.00
+        for <recipient@example.com>;
+        Tue, 19 Dec 2024 11:00:00 -0800 (PST)
+From: Suspicious Sender <suspicious@typosquatt.com>
+To: recipient@example.com
+Subject: You've won a prize! Click here to claim.
+
+
+"""
+This header should raise the following alerts:
+
+Suspicious domain detected: typosquatt.com
+"""
